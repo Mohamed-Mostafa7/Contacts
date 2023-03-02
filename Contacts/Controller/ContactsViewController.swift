@@ -27,10 +27,22 @@ class ContactsViewController: UIViewController {
         fetchContacts()
     }
     
+    @IBAction func SearchButtonPressed(_ sender: UIButton) {
+        let searchKey = searchTextField.text
+        fetchContacts(searchKey: searchKey)
+    }
+    
     // MARK: - fetching contacts
-    func fetchContacts() {
+    func fetchContacts(searchKey: String? = nil) {
         do {
             let request = Contact.fetchRequest()
+            let sort = NSSortDescriptor(key: #keyPath(Contact.firstName), ascending: true)
+            request.sortDescriptors = [sort]
+            if searchKey != nil && searchKey != "" {
+                let predicate1 = NSPredicate(format: "firstName CONTAINS [c] '\(searchKey!)'")
+                let predicate2 = NSPredicate(format: "lastName CONTAINS [c] '\(searchKey!)'")
+                request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicate1, predicate2])
+            }
             self.contacts = try context.fetch(request)
             DispatchQueue.main.async {
                 self.contactsTableView.reloadData()
@@ -70,11 +82,6 @@ class ContactsViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    
-    @IBAction func SearchButtonPressed(_ sender: UIButton) {
-        
-    }
-    
 }
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -93,7 +100,7 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         contactsTableView.cellForRow(at: indexPath)?.isSelected = false
-        
+        // MARK: - update contact
         let contact = self.contacts![indexPath.row]
         
         let alert = UIAlertController(title: "Update Contact", message: "", preferredStyle: .alert)

@@ -71,7 +71,6 @@
 				E9DBAE7529AD6895008B65E0 /* Model */,
 				E9DBAE7729AD68B9008B65E0 /* Controller */,
 				E9DBAE7629AD68AF008B65E0 /* View */,
-				E9DBAE7F29AD7740008B65E0 /* ContactCustomCell */,
 				E9DBAE7829AD68CD008B65E0 /* HelpingFiles */,
 				E9DBAE6B29AD67DB008B65E0 /* Info.plist */,
 				E9DBAE6329AD67DA008B65E0 /* Contacts.xcdatamodeld */,
@@ -94,6 +93,7 @@
 				E9DBAE6029AD67DA008B65E0 /* Main.storyboard */,
 				E9DBAE6829AD67DB008B65E0 /* LaunchScreen.storyboard */,
 				E9DBAE7929AD6EC3008B65E0 /* CustomTextField.swift */,
+				E9DBAE7F29AD7740008B65E0 /* ContactCustomCell */,
 			);
 			path = View;
 			sourceTree = "<group>";

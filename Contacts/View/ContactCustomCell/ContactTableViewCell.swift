@@ -9,12 +9,19 @@ import UIKit
 
 class ContactTableViewCell: UITableViewCell {
 
+    @IBOutlet var view: UIView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var numberLabel: UILabel!
+    @IBOutlet var personImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        view.layer.shadowColor = UIColor.gray.cgColor
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowOffset = CGSize(width: 0.1, height: 0.1)
+        view.layer.shadowRadius = 5
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

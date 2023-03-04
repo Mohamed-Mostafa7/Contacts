@@ -39,9 +39,9 @@ class ContactsViewController: UIViewController {
             let sort = NSSortDescriptor(key: #keyPath(Contact.firstName), ascending: true)
             request.sortDescriptors = [sort]
             if searchKey != nil && searchKey != "" {
-                let predicate1 = NSPredicate(format: "firstName CONTAINS [c] '\(searchKey!)'")
-                let predicate2 = NSPredicate(format: "lastName CONTAINS [c] '\(searchKey!)'")
-                request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicate1, predicate2])
+                let predicate = NSPredicate(format: "fullName CONTAINS [c] '\(searchKey!)'")
+                let predicate1 = NSPredicate(format: "number CONTAINS [c] '\(searchKey!)'")
+                request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicate, predicate1])
             }
             self.contacts = try context.fetch(request)
             DispatchQueue.main.async {
@@ -66,6 +66,7 @@ class ContactsViewController: UIViewController {
             let newContact = Contact(context: self.context)
             newContact.firstName = alert.textFields![0].text
             newContact.lastName = alert.textFields![1].text
+            newContact.fullName = "\(newContact.firstName ?? "") \(newContact.lastName ?? "")"
             newContact.number = alert.textFields![2].text
             
             do {

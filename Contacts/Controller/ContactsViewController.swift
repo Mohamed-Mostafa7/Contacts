@@ -6,6 +6,10 @@
 //
 
 import UIKit
+// protocol for using delegate design pattern
+protocol AddContactProtocol {
+    func contactInfo(firstName: String, lastName: String, number: String)
+}
 
 class ContactsViewController: UIViewController {
     
@@ -54,33 +58,11 @@ class ContactsViewController: UIViewController {
     
     // MARK: - add contact
     @objc func addContact() {
-        let alert = UIAlertController(title: "add Contact", message: "", preferredStyle: .alert)
-        alert.addTextField()
-        alert.addTextField()
-        alert.addTextField()
-        alert.textFields![0].placeholder = "First Name"
-        alert.textFields![1].placeholder = "Last Name"
-        alert.textFields![2].placeholder = "Number"
-        
-        let addAction = UIAlertAction(title: "Add", style: .default) { action in
-            let newContact = Contact(context: self.context)
-            newContact.firstName = alert.textFields![0].text
-            newContact.lastName = alert.textFields![1].text
-            newContact.fullName = "\(newContact.firstName ?? "") \(newContact.lastName ?? "")"
-            newContact.number = alert.textFields![2].text
-            
-            do {
-                try self.context.save()
-            } catch {
-                print("Eroor saving new contact!")
-            }
-            self.fetchContacts()
+
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "addContact") as? AddContactViewController {
+            vc.contactDelegat = self
+            navigationController?.pushViewController(vc, animated: true)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alert.addAction(addAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true)
     }
     
 }
@@ -153,4 +135,19 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-
+// MARK: - conforming to delegate disign pattern protocol
+extension ContactsViewController: AddContactProtocol{
+    func contactInfo(firstName: String, lastName: String, number: String) {
+        let newContact = Contact(context: self.context)
+        newContact.firstName = firstName
+        newContact.lastName = lastName
+        newContact.fullName = "\(firstName) \(lastName)"
+        newContact.number = number
+        do {
+            try self.context.save()
+        } catch {
+            print("Eroor saving new contact!")
+        }
+        self.fetchContacts()
+    }
+}

@@ -11,7 +11,6 @@
         <!--Contacts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ContactsViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -19,7 +18,6 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for contact" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yDU-1y-uMn" customClass="CustomTextField" customModule="Contacts" customModuleProvider="target">
                                 <rect key="frame" x="10" y="92" width="335" height="54"/>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -63,8 +61,86 @@
                         <outlet property="searchTextField" destination="yDU-1y-uMn" id="Zrt-Ae-qeQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="962.59541984732823" y="3.5211267605633805"/>
+        </scene>
+        <!--Add Contact View Controller-->
+        <scene sceneID="mrY-tu-NcS">
+            <objects>
+                <viewController storyboardIdentifier="addContact" id="42W-ik-vnn" customClass="AddContactViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ezd-z6-8h0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="rU0-vv-F9r">
+                                <rect key="frame" x="114" y="68" width="186" height="186.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rU0-vv-F9r" secondAttribute="height" multiplier="1:1" id="LPH-Do-vQR"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="7LL-2l-Ny0">
+                                <rect key="frame" x="20" y="274.5" width="374" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="ngg-Pk-Bv7"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="0.92844456549999999" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Ta-g3-wVq">
+                                <rect key="frame" x="20" y="298.5" width="374" height="228"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SdS-0v-QjU">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="228"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nDy-bG-LP6" customClass="CustomTextField" customModule="Contacts" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="62.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dLs-fA-oPt" customClass="CustomTextField" customModule="Contacts" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="82.5" width="374" height="62.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGG-gE-zeI" customClass="CustomTextField" customModule="Contacts" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="165" width="374" height="63"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="UGG-gE-zeI" firstAttribute="height" secondItem="dLs-fA-oPt" secondAttribute="height" id="NTh-w4-jQ0"/>
+                                            <constraint firstItem="dLs-fA-oPt" firstAttribute="height" secondItem="nDy-bG-LP6" secondAttribute="height" id="sI2-Bg-CTf"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B4L-np-tge"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B4L-np-tge" firstAttribute="trailing" secondItem="5Ta-g3-wVq" secondAttribute="trailing" constant="20" id="CS3-lP-jUW"/>
+                            <constraint firstItem="5Ta-g3-wVq" firstAttribute="top" secondItem="7LL-2l-Ny0" secondAttribute="bottom" constant="20" id="Iqd-Ay-Nyj"/>
+                            <constraint firstItem="7LL-2l-Ny0" firstAttribute="leading" secondItem="B4L-np-tge" secondAttribute="leading" constant="20" id="KcL-ph-ygG"/>
+                            <constraint firstItem="5Ta-g3-wVq" firstAttribute="leading" secondItem="B4L-np-tge" secondAttribute="leading" constant="20" id="TBm-e8-QD6"/>
+                            <constraint firstItem="B4L-np-tge" firstAttribute="trailing" secondItem="7LL-2l-Ny0" secondAttribute="trailing" constant="20" id="VZI-fl-9MM"/>
+                            <constraint firstItem="rU0-vv-F9r" firstAttribute="width" secondItem="Ezd-z6-8h0" secondAttribute="width" multiplier="0.45" id="aE8-Uc-qlA"/>
+                            <constraint firstItem="7LL-2l-Ny0" firstAttribute="top" secondItem="rU0-vv-F9r" secondAttribute="bottom" constant="20" id="jCe-lz-vz9"/>
+                            <constraint firstItem="rU0-vv-F9r" firstAttribute="top" secondItem="B4L-np-tge" secondAttribute="top" constant="20" id="kKi-hG-VTQ"/>
+                            <constraint firstItem="rU0-vv-F9r" firstAttribute="centerX" secondItem="B4L-np-tge" secondAttribute="centerX" id="vUZ-Q2-Tig"/>
+                            <constraint firstItem="nDy-bG-LP6" firstAttribute="height" secondItem="Ezd-z6-8h0" secondAttribute="height" multiplier="0.07" id="zIO-L4-9lQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contactFirstName" destination="nDy-bG-LP6" id="S50-Sj-b9l"/>
+                        <outlet property="contactImageView" destination="rU0-vv-F9r" id="x8Z-Ke-KGI"/>
+                        <outlet property="contactLastName" destination="dLs-fA-oPt" id="VIf-Dv-VTd"/>
+                        <outlet property="contactNumber" destination="UGG-gE-zeI" id="E54-iK-dLg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7HK-zs-m2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847.826086956522" y="2.6785714285714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O6o-ig-ddf">
@@ -86,6 +162,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image2" width="960" height="1280"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

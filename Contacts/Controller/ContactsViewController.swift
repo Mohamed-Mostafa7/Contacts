@@ -8,7 +8,7 @@
 import UIKit
 // protocol for using delegate design pattern
 protocol AddContactProtocol {
-    func contactInfo(firstName: String, lastName: String, number: String)
+    func contactInfo(firstName: String, lastName: String, number: String,image: Data?)
 }
 
 class ContactsViewController: UIViewController {
@@ -137,12 +137,14 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
 }
 // MARK: - conforming to delegate disign pattern protocol
 extension ContactsViewController: AddContactProtocol{
-    func contactInfo(firstName: String, lastName: String, number: String) {
+    func contactInfo(firstName: String, lastName: String, number: String, image: Data?) {
         let newContact = Contact(context: self.context)
         newContact.firstName = firstName
         newContact.lastName = lastName
         newContact.fullName = "\(firstName) \(lastName)"
         newContact.number = number
+        newContact.image = image
+        
         do {
             try self.context.save()
         } catch {

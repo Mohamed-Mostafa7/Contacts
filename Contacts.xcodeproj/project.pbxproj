@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E908A98B29C08747008CD944 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E908A98A29C08747008CD944 /* AddContactViewController.swift */; };
-		E931A85129B3E95700BB7A0F /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931A84F29B3E95700BB7A0F /* Contact+CoreDataClass.swift */; };
-		E931A85229B3E95700BB7A0F /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931A85029B3E95700BB7A0F /* Contact+CoreDataProperties.swift */; };
+		E908A98E29C0BC9A008CD944 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E908A98C29C0BC9A008CD944 /* Contact+CoreDataClass.swift */; };
+		E908A98F29C0BC9A008CD944 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E908A98D29C0BC9A008CD944 /* Contact+CoreDataProperties.swift */; };
 		E9DBAE5B29AD67DA008B65E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBAE5A29AD67DA008B65E0 /* AppDelegate.swift */; };
 		E9DBAE5D29AD67DA008B65E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBAE5C29AD67DA008B65E0 /* SceneDelegate.swift */; };
 		E9DBAE5F29AD67DA008B65E0 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBAE5E29AD67DA008B65E0 /* ContactsViewController.swift */; };
@@ -24,8 +24,8 @@
 
 /* Begin PBXFileReference section */
 		E908A98A29C08747008CD944 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
-		E931A84F29B3E95700BB7A0F /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E931A85029B3E95700BB7A0F /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E908A98C29C0BC9A008CD944 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E908A98D29C0BC9A008CD944 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E9DBAE5729AD67DA008B65E0 /* Contacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Contacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DBAE5A29AD67DA008B65E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9DBAE5C29AD67DA008B65E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,8 +83,8 @@
 		E9DBAE7529AD6895008B65E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E931A84F29B3E95700BB7A0F /* Contact+CoreDataClass.swift */,
-				E931A85029B3E95700BB7A0F /* Contact+CoreDataProperties.swift */,
+				E908A98C29C0BC9A008CD944 /* Contact+CoreDataClass.swift */,
+				E908A98D29C0BC9A008CD944 /* Contact+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,13 +201,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9DBAE7A29AD6EC3008B65E0 /* CustomTextField.swift in Sources */,
-				E931A85129B3E95700BB7A0F /* Contact+CoreDataClass.swift in Sources */,
 				E9DBAE6529AD67DA008B65E0 /* Contacts.xcdatamodeld in Sources */,
 				E908A98B29C08747008CD944 /* AddContactViewController.swift in Sources */,
+				E908A98F29C0BC9A008CD944 /* Contact+CoreDataProperties.swift in Sources */,
 				E9DBAE5F29AD67DA008B65E0 /* ContactsViewController.swift in Sources */,
-				E931A85229B3E95700BB7A0F /* Contact+CoreDataProperties.swift in Sources */,
 				E9DBAE7D29AD70AF008B65E0 /* ContactTableViewCell.swift in Sources */,
 				E9DBAE5B29AD67DA008B65E0 /* AppDelegate.swift in Sources */,
+				E908A98E29C0BC9A008CD944 /* Contact+CoreDataClass.swift in Sources */,
 				E9DBAE5D29AD67DA008B65E0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

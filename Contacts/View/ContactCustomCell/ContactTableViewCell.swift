@@ -39,6 +39,11 @@ class ContactTableViewCell: UITableViewCell {
     func configure(model: Contact) {
         personImageView.layer.cornerRadius = personImageView.frame.size.height / 2
         personImageView.clipsToBounds = true
+        if let imageData = model.image{
+            personImageView.image = UIImage(data: imageData)
+        } else {
+            personImageView.image = UIImage(systemName: "person.circle.fill")
+        }
         
         nameLabel.text = (model.firstName ?? "") + " " + (model.lastName ?? "")
         numberLabel.text = model.number

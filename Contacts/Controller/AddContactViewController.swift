@@ -7,30 +7,55 @@
 
 import UIKit
 
-class AddContactViewController: UIViewController {
+class AddContactViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     var contactDelegat: AddContactProtocol?
     
     @IBOutlet var contactImageView: UIImageView!
     @IBOutlet var contactFirstName: CustomTextField!
     @IBOutlet var contactLastName: CustomTextField!
-    
     @IBOutlet var contactNumber: UITextField!
+    var imageData: Data?
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addButtonTapped))
         
+        // Add tap gesture recognizer to the picture.
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        contactImageView.isUserInteractionEnabled = true
+        contactImageView.addGestureRecognizer(tapGestureRecognizer)
+        
     }
     
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        _ = tapGestureRecognizer.view as! UIImageView
+        // Use image picker to get the picture from library.
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
+    }
     
     @objc func addButtonTapped(){
         contactDelegat?.contactInfo(
             firstName: contactFirstName.text ?? "",
             lastName: contactLastName.text ?? "",
-            number: contactNumber.text ?? ""
+            number: contactNumber.text ?? "",
+            image: imageData
         )
         navigationController?.popViewController(animated: true)
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else{ return }
+        contactImageView.image = image
+        if let jpegData = image.jpegData(compressionQuality: 1.0) {
+            imageData = jpegData
+        }
+        dismiss(animated: true)
+    }
+    
 
 }
 

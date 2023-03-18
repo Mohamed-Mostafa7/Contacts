@@ -9,6 +9,18 @@ import UIKit
 
 class AddContactViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
+    private lazy var gallery = UIAction(title: "Gallery", image: UIImage(systemName: "photo.stack")) { (action) in
+        self.openGallery()
+     }
+
+    private lazy var camera = UIAction(title: "Camera", image: UIImage(systemName: "camera.fill")) { (action) in
+        self.openCamera()
+     }
+    
+    var menu = UIMenu()
+    let picker = UIImagePickerController()
+     
+    @IBOutlet var hiddenButton: UIButton!
     var contactDelegat: AddContactProtocol?
     
     @IBOutlet var contactImageView: UIImageView!
@@ -19,16 +31,17 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addButtonTapped))
+        picker.delegate = self
+        // add menu to the prifile image to choose the gallery or the camera.
+        menu = UIMenu(title: "Pick an image", options: .displayInline, children: [gallery , camera])
+        hiddenButton.menu = menu
+        hiddenButton.showsMenuAsPrimaryAction = true
         
-        // Add tap gesture recognizer to the picture.
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        contactImageView.isUserInteractionEnabled = true
-        contactImageView.addGestureRecognizer(tapGestureRecognizer)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveButtonTapped))
         
     }
     
-    @objc func addButtonTapped(){
+    @objc func saveButtonTapped(){
         contactDelegat?.contactInfo(
             firstName: contactFirstName.text ?? "",
             lastName: contactLastName.text ?? "",
@@ -37,18 +50,29 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         )
         navigationController?.popViewController(animated: true)
     }
-    
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-        _ = tapGestureRecognizer.view as! UIImageView
-        // Use image picker to get the picture from library.
-        let imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = true
-        imagePicker.delegate = self
-        present(imagePicker, animated: true)
+    // MARK: - Using ImagePicker to get image from Gallery.
+    func openGallery() {
+        picker.allowsEditing = true
+        present(picker, animated: true)
     }
+    // MARK: - Using ImagePicker to get image from Camera.
+    func openCamera(){
+            if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+                picker.sourceType = .camera
+                picker.allowsEditing = true
+                present(picker, animated: true, completion: nil)
+            } else {
+                let alertController: UIAlertController = {
+                    let controller = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default)
+                    controller.addAction(action)
+                    return controller
+                }()
+                present(alertController, animated: true)
+            }
+        }
     
-    // MARK: - getting the Picture from the imagePicker.
+    // MARK: - After getting the Picture from the imagePicker we send it to filters viewController.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else{ return }
         self.contactImageView.image = image
@@ -63,13 +87,10 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
             self.navigationController?.pushViewController(vc, animated: false)
             self.dismiss(animated: true)
         }
-        
     }
-    
-
 }
 
-// MARK: - custmaizing view UI
+// MARK: - custmaizing view UI Appearance
 extension AddContactViewController {
     // Changing the NavigationBarTitle to small
     override func viewWillAppear(_ animated: Bool) {

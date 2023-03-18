@@ -74,13 +74,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.plus.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rU0-vv-F9r">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rU0-vv-F9r">
                                 <rect key="frame" x="112.5" y="68" width="187.5" height="186"/>
                                 <color key="tintColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rU0-vv-F9r" secondAttribute="height" multiplier="1:1" id="LPH-Do-vQR"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yi-kn-feq">
+                                <rect key="frame" x="114" y="68" width="186" height="186.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3yi-kn-feq" secondAttribute="height" multiplier="1:1" id="3Gt-Nt-W8w"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="7LL-2l-Ny0">
                                 <rect key="frame" x="20" y="274.5" width="374" height="4"/>
                                 <constraints>
@@ -121,6 +129,8 @@
                         <viewLayoutGuide key="safeArea" id="B4L-np-tge"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3yi-kn-feq" firstAttribute="width" secondItem="rU0-vv-F9r" secondAttribute="width" id="5ML-ov-CW7"/>
+                            <constraint firstItem="3yi-kn-feq" firstAttribute="centerX" secondItem="B4L-np-tge" secondAttribute="centerX" id="Bvx-tR-QBo"/>
                             <constraint firstItem="B4L-np-tge" firstAttribute="trailing" secondItem="5Ta-g3-wVq" secondAttribute="trailing" constant="20" id="CS3-lP-jUW"/>
                             <constraint firstItem="5Ta-g3-wVq" firstAttribute="top" secondItem="7LL-2l-Ny0" secondAttribute="bottom" constant="20" id="Iqd-Ay-Nyj"/>
                             <constraint firstItem="7LL-2l-Ny0" firstAttribute="leading" secondItem="B4L-np-tge" secondAttribute="leading" constant="20" id="KcL-ph-ygG"/>
@@ -129,6 +139,7 @@
                             <constraint firstItem="rU0-vv-F9r" firstAttribute="width" secondItem="Ezd-z6-8h0" secondAttribute="width" multiplier="0.45" id="aE8-Uc-qlA"/>
                             <constraint firstItem="7LL-2l-Ny0" firstAttribute="top" secondItem="rU0-vv-F9r" secondAttribute="bottom" constant="20" id="jCe-lz-vz9"/>
                             <constraint firstItem="rU0-vv-F9r" firstAttribute="top" secondItem="B4L-np-tge" secondAttribute="top" constant="20" id="kKi-hG-VTQ"/>
+                            <constraint firstItem="3yi-kn-feq" firstAttribute="top" secondItem="rU0-vv-F9r" secondAttribute="top" id="pez-Lh-DS9"/>
                             <constraint firstItem="rU0-vv-F9r" firstAttribute="centerX" secondItem="B4L-np-tge" secondAttribute="centerX" id="vUZ-Q2-Tig"/>
                             <constraint firstItem="nDy-bG-LP6" firstAttribute="height" secondItem="Ezd-z6-8h0" secondAttribute="height" multiplier="0.07" id="zIO-L4-9lQ"/>
                         </constraints>
@@ -138,6 +149,7 @@
                         <outlet property="contactImageView" destination="rU0-vv-F9r" id="x8Z-Ke-KGI"/>
                         <outlet property="contactLastName" destination="dLs-fA-oPt" id="VIf-Dv-VTd"/>
                         <outlet property="contactNumber" destination="UGG-gE-zeI" id="E54-iK-dLg"/>
+                        <outlet property="hiddenButton" destination="3yi-kn-feq" id="Nh4-U9-7Xg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7HK-zs-m2c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -225,7 +237,7 @@
     <resources>
         <image name="Image2" width="960" height="1280"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="person.crop.circle.badge.plus.fill" catalog="system" width="128" height="114"/>
+        <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,8 +74,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="rU0-vv-F9r">
-                                <rect key="frame" x="114" y="68" width="186" height="186.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.plus.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rU0-vv-F9r">
+                                <rect key="frame" x="112.5" y="68" width="187.5" height="186"/>
+                                <color key="tintColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rU0-vv-F9r" secondAttribute="height" multiplier="1:1" id="LPH-Do-vQR"/>
                                 </constraints>
@@ -142,6 +144,65 @@
             </objects>
             <point key="canvasLocation" x="1847.826086956522" y="2.6785714285714284"/>
         </scene>
+        <!--Filters Collection View Controller-->
+        <scene sceneID="K4h-PT-ab9">
+            <objects>
+                <collectionViewController storyboardIdentifier="FiltersCollectionViewController" id="a0S-eK-4rW" customClass="FiltersCollectionViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="12b-sn-MZU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pdi-id-B5Q">
+                            <size key="itemSize" width="171" height="238"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCollectionViewCell" id="3ha-lK-2ab" customClass="ImageCollectionViewCell" customModule="Contacts" customModuleProvider="target">
+                                <rect key="frame" x="20" y="10" width="171" height="238"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jJA-dR-t4k">
+                                    <rect key="frame" x="0.0" y="0.0" width="171" height="238"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="4Vl-cM-Jxj">
+                                            <rect key="frame" x="0.0" y="0.0" width="171" height="238"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpi-qK-wbq">
+                                            <rect key="frame" x="20" y="212" width="131" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4Vl-cM-Jxj" firstAttribute="leading" secondItem="jJA-dR-t4k" secondAttribute="leading" id="3VW-xB-efy"/>
+                                        <constraint firstAttribute="bottom" secondItem="Bpi-qK-wbq" secondAttribute="bottom" constant="5" id="DA4-lN-g9K"/>
+                                        <constraint firstAttribute="bottom" secondItem="4Vl-cM-Jxj" secondAttribute="bottom" id="EC2-o5-zkU"/>
+                                        <constraint firstAttribute="trailing" secondItem="4Vl-cM-Jxj" secondAttribute="trailing" id="ONv-md-h84"/>
+                                        <constraint firstItem="4Vl-cM-Jxj" firstAttribute="top" secondItem="jJA-dR-t4k" secondAttribute="top" id="TG2-CW-1pn"/>
+                                        <constraint firstAttribute="trailing" secondItem="Bpi-qK-wbq" secondAttribute="trailing" constant="20" id="Utq-gi-Csl"/>
+                                        <constraint firstItem="Bpi-qK-wbq" firstAttribute="leading" secondItem="jJA-dR-t4k" secondAttribute="leading" constant="20" id="vXL-m5-rBt"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="171" height="238"/>
+                                <connections>
+                                    <outlet property="filterNameLabel" destination="Bpi-qK-wbq" id="Lxk-bo-KR5"/>
+                                    <outlet property="filteredImage" destination="4Vl-cM-Jxj" id="oPU-Nz-Ev4"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="a0S-eK-4rW" id="Jk6-CQ-j21"/>
+                            <outlet property="delegate" destination="a0S-eK-4rW" id="WvI-Ji-6XE"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oI-rh-5q7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2701" y="3"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="O6o-ig-ddf">
             <objects>
@@ -164,6 +225,7 @@
     <resources>
         <image name="Image2" width="960" height="1280"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="person.crop.circle.badge.plus.fill" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

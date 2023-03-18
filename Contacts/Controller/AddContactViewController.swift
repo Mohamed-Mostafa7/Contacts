@@ -16,6 +16,7 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet var contactLastName: CustomTextField!
     @IBOutlet var contactNumber: UITextField!
     var imageData: Data?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addButtonTapped))
@@ -25,16 +26,6 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         contactImageView.isUserInteractionEnabled = true
         contactImageView.addGestureRecognizer(tapGestureRecognizer)
         
-    }
-    
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-        _ = tapGestureRecognizer.view as! UIImageView
-        // Use image picker to get the picture from library.
-        let imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = true
-        imagePicker.delegate = self
-        present(imagePicker, animated: true)
     }
     
     @objc func addButtonTapped(){
@@ -47,13 +38,32 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        _ = tapGestureRecognizer.view as! UIImageView
+        // Use image picker to get the picture from library.
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        present(imagePicker, animated: true)
+    }
+    
+    // MARK: - getting the Picture from the imagePicker.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else{ return }
-        contactImageView.image = image
-        if let jpegData = image.jpegData(compressionQuality: 1.0) {
-            imageData = jpegData
+        self.contactImageView.image = image
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "FiltersCollectionViewController") as? FiltersCollectionViewController {
+            vc.profileImage = image
+            vc.selectedProfileImage = { image in
+                self.contactImageView.image = image
+                if let jpegData = image.jpegData(compressionQuality: 1.0) {
+                    self.imageData = jpegData
+                }
+            }
+            self.navigationController?.pushViewController(vc, animated: false)
+            self.dismiss(animated: true)
         }
-        dismiss(animated: true)
+        
     }
     
 

@@ -39,11 +39,21 @@
                                 <rect key="frame" x="0.0" y="146" width="414" height="716"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing to Show !!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVI-M1-teC">
+                                <rect key="frame" x="62" y="404.5" width="290" height="145"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WVI-M1-teC" secondAttribute="height" multiplier="2:1" id="KH4-kF-HeC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-HeavyItalic" family="Avenir Next" pointSize="35"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qpe-2a-nEb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4cT-us-hur"/>
+                            <constraint firstItem="WVI-M1-teC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="Cs4-U9-iHk"/>
                             <constraint firstItem="qpe-2a-nEb" firstAttribute="leading" secondItem="yDU-1y-uMn" secondAttribute="trailing" constant="5" id="Gwv-Jc-uFs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ggL-go-01S" secondAttribute="bottom" id="OS7-m6-md2"/>
                             <constraint firstItem="yDU-1y-uMn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="PuS-5D-baN"/>
@@ -54,11 +64,14 @@
                             <constraint firstItem="qpe-2a-nEb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="sZq-O0-vFy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qpe-2a-nEb" secondAttribute="trailing" constant="10" id="u96-kB-MTE"/>
                             <constraint firstItem="ggL-go-01S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z1F-Vb-Ldd"/>
+                            <constraint firstItem="WVI-M1-teC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="zIT-TU-Jkz"/>
+                            <constraint firstItem="WVI-M1-teC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zjP-7W-b0H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contacts" id="UD9-of-vKc"/>
                     <connections>
                         <outlet property="contactsTableView" destination="ggL-go-01S" id="iLv-yF-JJW"/>
+                        <outlet property="emptySearchLabel" destination="WVI-M1-teC" id="onL-qO-lmj"/>
                         <outlet property="searchTextField" destination="yDU-1y-uMn" id="Zrt-Ae-qeQ"/>
                     </connections>
                 </viewController>

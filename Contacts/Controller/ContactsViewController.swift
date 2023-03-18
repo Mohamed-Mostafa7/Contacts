@@ -13,6 +13,7 @@ protocol AddContactProtocol {
 
 class ContactsViewController: UIViewController {
     
+    @IBOutlet var emptySearchLabel: UILabel!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var contacts: [Contact]?
     
@@ -40,7 +41,7 @@ class ContactsViewController: UIViewController {
     func fetchContacts(searchKey: String? = nil) {
         do {
             let request = Contact.fetchRequest()
-            let sort = NSSortDescriptor(key: #keyPath(Contact.firstName), ascending: true)
+            let sort = NSSortDescriptor(key: #keyPath(Contact.fullName), ascending: true)
             request.sortDescriptors = [sort]
             if searchKey != nil && searchKey != "" {
                 let predicate = NSPredicate(format: "fullName CONTAINS [c] '\(searchKey!)'")
@@ -69,7 +70,12 @@ class ContactsViewController: UIViewController {
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        contacts?.count ?? 0
+        if contacts?.count == 0 {
+            emptySearchLabel.isHidden = false
+        } else {
+            emptySearchLabel.isHidden = true
+        }
+       return contacts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -28,9 +28,18 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet var contactLastName: CustomTextField!
     @IBOutlet var contactNumber: UITextField!
     var imageData: Data?
+    var contact: Contact?
+    var updatedContactClosure: ((Contact) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contactFirstName.text = contact?.firstName
+        contactLastName.text = contact?.lastName
+        contactNumber.text = contact?.number
+        if let data = contact?.image {
+            contactImageView.image = UIImage(data: data)
+        }
+        
         picker.delegate = self
         // add menu to the prifile image to choose the gallery or the camera.
         menu = UIMenu(title: "Pick an image", options: .displayInline, children: [gallery , camera])
@@ -40,14 +49,19 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveButtonTapped))
         
     }
-    
+    // MARK: - save the coantact
     @objc func saveButtonTapped(){
+        contact?.firstName = contactFirstName.text
+        contact?.lastName = contactLastName.text
+        contact?.number = contactNumber.text
+        contact?.fullName = ("\(contact?.firstName ?? "") \(contact?.lastName ?? "")")
         contactDelegat?.contactInfo(
             firstName: contactFirstName.text ?? "",
             lastName: contactLastName.text ?? "",
             number: contactNumber.text ?? "",
             image: imageData
         )
+        updatedContactClosure?(contact!)
         navigationController?.popViewController(animated: true)
     }
     // MARK: - Using ImagePicker to get image from Gallery.
@@ -82,6 +96,7 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
                 self.contactImageView.image = image
                 if let jpegData = image.jpegData(compressionQuality: 1.0) {
                     self.imageData = jpegData
+                    self.contact?.image = jpegData
                 }
             }
             self.navigationController?.pushViewController(vc, animated: false)

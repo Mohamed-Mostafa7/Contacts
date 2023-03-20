@@ -92,37 +92,23 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         contactsTableView.cellForRow(at: indexPath)?.isSelected = false
         // MARK: - update contact
-        let contact = self.contacts![indexPath.row]
+        var contact = self.contacts![indexPath.row]
         
-        let alert = UIAlertController(title: "Update Contact", message: "", preferredStyle: .alert)
-        alert.addTextField()
-        alert.addTextField()
-        alert.addTextField()
-        alert.textFields![0].placeholder = "First Name"
-        alert.textFields![1].placeholder = "Last Name"
-        alert.textFields![2].placeholder = "Number"
-        alert.textFields![0].text = contact.firstName
-        alert.textFields![1].text = contact.lastName
-        alert.textFields![2].text = contact.number
-        
-        let addAction = UIAlertAction(title: "Update", style: .default) { action in
-            contact.firstName = alert.textFields![0].text
-            contact.lastName = alert.textFields![1].text
-            contact.number = alert.textFields![2].text
-            do {
-                try self.context.save()
-            } catch {
-                print("Eroor updating contact!")
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "addContact") as? AddContactViewController {
+            vc.contact = contact
+            vc.updatedContactClosure = { Updatedcontact in
+                contact = Updatedcontact
+                do {
+                    try self.context.save()
+                } catch {
+                    print("Eroor updating contact!")
+                }
+                DispatchQueue.main.async {
+                    self.fetchContacts()
+                }
             }
-            self.fetchContacts()
+            navigationController?.pushViewController(vc, animated: true)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alert.addAction(addAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true)
-        
-        
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

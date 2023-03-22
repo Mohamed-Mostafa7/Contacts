@@ -17,6 +17,10 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         self.openCamera()
      }
     
+    private lazy var showImage = UIAction(title: "Show image", image: UIImage(systemName: "photo.fill")) { (action) in
+        self.showProfileImage()
+    }
+    
     var menu = UIMenu()
     let picker = UIImagePickerController()
      
@@ -42,7 +46,7 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         
         picker.delegate = self
         // add menu to the prifile image to choose the gallery or the camera.
-        menu = UIMenu(title: "Pick an image", options: .displayInline, children: [gallery , camera])
+        menu = UIMenu(title: "Pick an image", options: .displayInline, children: [gallery , camera, showImage])
         hiddenButton.menu = menu
         hiddenButton.showsMenuAsPrimaryAction = true
         
@@ -65,6 +69,17 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         navigationController?.popViewController(animated: true)
     }
     // MARK: - Using ImagePicker to get image from Gallery.
+    func showProfileImage() {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ShowPrifilePhotoViewController") as? ShowPrifilePhotoViewController {
+            if imageData == nil && contact?.image == nil{
+                let alertController = alert(message: "No profile photo added for this contact!")
+                present(alertController, animated: true)
+            }else {
+                vc.profileImage = contactImageView.image
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
     func openGallery() {
         picker.allowsEditing = true
         present(picker, animated: true)
@@ -76,15 +91,18 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
                 picker.allowsEditing = true
                 present(picker, animated: true, completion: nil)
             } else {
-                let alertController: UIAlertController = {
-                    let controller = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default)
-                    controller.addAction(action)
-                    return controller
-                }()
+                let alertController = alert(message: "No Camera support for this device")
                 present(alertController, animated: true)
             }
         }
+    
+    func alert(message: String) -> UIAlertController {
+        let controller = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        controller.addAction(action)
+        return controller
+    }
+    
     
     // MARK: - After getting the Picture from the imagePicker we send it to filters viewController.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -111,10 +129,6 @@ extension AddContactViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewDidLayoutSubviews() {

@@ -22,6 +22,7 @@
 		E9DBAE7A29AD6EC3008B65E0 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBAE7929AD6EC3008B65E0 /* CustomTextField.swift */; };
 		E9DBAE7D29AD70AF008B65E0 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBAE7B29AD70AF008B65E0 /* ContactTableViewCell.swift */; };
 		E9DBAE7E29AD70AF008B65E0 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9DBAE7C29AD70AF008B65E0 /* ContactTableViewCell.xib */; };
+		E9E7748E29CB5C5500E2F295 /* ShowPrifilePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7748D29CB5C5500E2F295 /* ShowPrifilePhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		E9DBAE7929AD6EC3008B65E0 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E9DBAE7B29AD70AF008B65E0 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		E9DBAE7C29AD70AF008B65E0 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		E9E7748D29CB5C5500E2F295 /* ShowPrifilePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPrifilePhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				E9DBAE5E29AD67DA008B65E0 /* ContactsViewController.swift */,
 				E908A98A29C08747008CD944 /* AddContactViewController.swift */,
 				E98FA0E129C4BF56006754AC /* FiltersCollectionViewController.swift */,
+				E9E7748D29CB5C5500E2F295 /* ShowPrifilePhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				E98FA0E429C4C981006754AC /* ImageCollectionViewCell.swift in Sources */,
 				E9DBAE6529AD67DA008B65E0 /* Contacts.xcdatamodeld in Sources */,
 				E908A98B29C08747008CD944 /* AddContactViewController.swift in Sources */,
+				E9E7748E29CB5C5500E2F295 /* ShowPrifilePhotoViewController.swift in Sources */,
 				E908A98F29C0BC9A008CD944 /* Contact+CoreDataProperties.swift in Sources */,
 				E98FA0E229C4BF56006754AC /* FiltersCollectionViewController.swift in Sources */,
 				E9DBAE5F29AD67DA008B65E0 /* ContactsViewController.swift in Sources */,

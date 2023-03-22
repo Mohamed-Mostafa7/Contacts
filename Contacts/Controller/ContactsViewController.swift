@@ -31,6 +31,10 @@ class ContactsViewController: UIViewController {
         
         fetchContacts()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
     
     @IBAction func SearchButtonPressed(_ sender: UIButton) {
         let searchKey = searchTextField.text

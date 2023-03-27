@@ -53,6 +53,10 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveButtonTapped))
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     // MARK: - save the coantact
     @objc func saveButtonTapped(){
         contact?.firstName = contactFirstName.text

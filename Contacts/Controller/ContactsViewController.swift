@@ -40,9 +40,13 @@ class ContactsViewController: UIViewController {
         let searchKey = searchTextField.text
         fetchContacts(searchKey: searchKey)
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     
     // MARK: - fetching contacts
     func fetchContacts(searchKey: String? = nil) {
+        view.endEditing(true)
         do {
             let request = Contact.fetchRequest()
             let sort = NSSortDescriptor(key: #keyPath(Contact.fullName), ascending: true)

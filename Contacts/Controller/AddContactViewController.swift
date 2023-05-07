@@ -9,16 +9,16 @@ import UIKit
 
 class AddContactViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    private lazy var gallery = UIAction(title: "Gallery", image: UIImage(systemName: "photo.stack")) { (action) in
-        self.openGallery()
+    private lazy var gallery = UIAction(title: "Gallery", image: UIImage(systemName: "photo.stack")) { [weak self] (action) in
+        self?.openGallery()
      }
 
-    private lazy var camera = UIAction(title: "Camera", image: UIImage(systemName: "camera.fill")) { (action) in
-        self.openCamera()
+    private lazy var camera = UIAction(title: "Camera", image: UIImage(systemName: "camera.fill")) { [weak self] (action) in
+        self?.openCamera()
      }
     
-    private lazy var showImage = UIAction(title: "Show image", image: UIImage(systemName: "photo.fill")) { (action) in
-        self.showProfileImage()
+    private lazy var showImage = UIAction(title: "Show image", image: UIImage(systemName: "photo.fill")) { [weak self] (action) in
+        self?.showProfileImage()
     }
     
     var menu = UIMenu()
@@ -74,7 +74,7 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     }
     // MARK: - Using ImagePicker to get image from Gallery.
     func showProfileImage() {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "ShowPrifilePhotoViewController") as? ShowPrifilePhotoViewController {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ShowPrifilePhotoViewController") as? ShowProfilePhotoViewController {
             if imageData == nil && contact?.image == nil{
                 let alertController = alert(message: "No profile photo added for this contact!")
                 present(alertController, animated: true)

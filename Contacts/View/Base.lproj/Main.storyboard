@@ -228,10 +228,10 @@
             </objects>
             <point key="canvasLocation" x="2712" y="-301"/>
         </scene>
-        <!--Show Prifile Photo View Controller-->
+        <!--Show Profile Photo View Controller-->
         <scene sceneID="g1o-nH-58r">
             <objects>
-                <viewController storyboardIdentifier="ShowPrifilePhotoViewController" id="1Cg-y6-0T1" customClass="ShowPrifilePhotoViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowPrifilePhotoViewController" id="1Cg-y6-0T1" customClass="ShowProfilePhotoViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mp2-JW-p2p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

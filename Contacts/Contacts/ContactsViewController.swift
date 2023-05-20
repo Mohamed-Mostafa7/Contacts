@@ -87,9 +87,12 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.identifier, for: indexPath) as! ContactTableViewCell
-        cell.configure(model: contacts![indexPath.row])
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.identifier, for: indexPath) as? ContactTableViewCell{
+            guard let contacts = contacts else {return UITableViewCell()}
+            cell.configure(model: contacts[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -122,18 +125,19 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // MARK: - delete contact
         let action = UIContextualAction(style: .destructive, title: "Delete") { (actoin, view, completionHandler) in
-            let contactToRemove = self.contacts![indexPath.row]
-            self.context.delete(contactToRemove)
-            do {
-                try self.context.save()
-            } catch {
-                print("Can't delete person!")
+            
+            if let contactToRemove = self.contacts?[indexPath.row] {
+                self.context.delete(contactToRemove)
+                do {
+                    try self.context.save()
+                } catch {
+                    print("Can't delete person!")
+                }
+                self.fetchContacts()
             }
-            self.fetchContacts()
         }
         return UISwipeActionsConfiguration(actions: [action])
     }
-    
 }
 // MARK: - conforming to delegate disign pattern protocol
 extension ContactsViewController: AddContactProtocol{

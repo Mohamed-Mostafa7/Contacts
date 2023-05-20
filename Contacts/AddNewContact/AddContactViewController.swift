@@ -69,7 +69,8 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
             number: contactNumber.text ?? "",
             image: imageData
         )
-        updatedContactClosure?(contact!)
+        guard let contact = contact else { return }
+        updatedContactClosure?(contact)
         navigationController?.popViewController(animated: true)
     }
     // MARK: - Using ImagePicker to get image from Gallery.

@@ -19,12 +19,13 @@ class FiltersCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            selectedProfileImage?(profileImage!)
+            if let profileImage = profileImage {
+                selectedProfileImage?(profileImage)
+            }
         } else {
             guard let image = profileImage?.addFilter(filter: FilterType.allCases[indexPath.row - 1]) else {return}
             selectedProfileImage?(image)
         }
-        
         navigationController?.popViewController(animated: true)
     }
 
@@ -41,19 +42,21 @@ class FiltersCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
-        if indexPath.row == 0 {
-            cell.filteredImage.image = profileImage!
-            cell.filterNameLabel.text = "Original"
-        } else {
-            let filterIndex = indexPath.row - 1
-            cell.filteredImage.image = profileImage!.addFilter(filter: FilterType.allCases[filterIndex])
-            cell.filterNameLabel.text = String(describing: FilterType.allCases[filterIndex])
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell {
+            if indexPath.row == 0 {
+                guard let profileImage = profileImage else { return cell }
+                cell.filteredImage.image = profileImage
+                cell.filterNameLabel.text = "Original"
+            } else {
+                guard let profileImage = profileImage else { return cell }
+                let filterIndex = indexPath.row - 1
+                cell.filteredImage.image = profileImage.addFilter(filter: FilterType.allCases[filterIndex])
+                cell.filterNameLabel.text = String(describing: FilterType.allCases[filterIndex])
+            }
+            return cell
         }
-        return cell
+        return UICollectionViewCell()
     }
-    
-    
 }
 
 // MARK: - identifyint the frame of the collectionView Cell.

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ckz-Ff-bhe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Contact View Controller-->
+        <scene sceneID="uAj-ji-Mak">
+            <objects>
+                <viewController storyboardIdentifier="addContact" id="ckz-Ff-bhe" customClass="AddContactViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ylz-Pt-cyp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SXl-O1-v5W">
+                                <rect key="frame" x="112" y="69.5" width="188" height="186.5"/>
+                                <color key="tintColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SXl-O1-v5W" secondAttribute="height" multiplier="1:1" id="JkS-de-TXA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-cE-zIK">
+                                <rect key="frame" x="114" y="68" width="186" height="186.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eYQ-cE-zIK" secondAttribute="height" multiplier="1:1" id="PcY-3e-W2u"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="chX-6B-qHa">
+                                <rect key="frame" x="20" y="274.5" width="374" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="ak6-12-IaC"/>
+                                </constraints>
+                                <color key="progressTintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="0.92844456549999999" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kyS-xY-z8X">
+                                <rect key="frame" x="20" y="298.5" width="374" height="228"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i0F-Jk-nhK">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="228"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecm-HN-rSA" customClass="CustomTextField" customModule="Contacts" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="62.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kF1-Dq-fzf" customClass="CustomTextField" customModule="Contacts" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="82.5" width="374" height="62.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDy-oo-k8X" customClass="CustomTextField" customModule="Contacts" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="165" width="374" height="63"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fDy-oo-k8X" firstAttribute="height" secondItem="kF1-Dq-fzf" secondAttribute="height" id="BSR-C4-n3b"/>
+                                            <constraint firstItem="kF1-Dq-fzf" firstAttribute="height" secondItem="ecm-HN-rSA" secondAttribute="height" id="LG5-mb-9CU"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7lC-ep-n4G"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eYQ-cE-zIK" firstAttribute="width" secondItem="SXl-O1-v5W" secondAttribute="width" id="3p4-r5-GoV"/>
+                            <constraint firstItem="SXl-O1-v5W" firstAttribute="centerX" secondItem="7lC-ep-n4G" secondAttribute="centerX" id="6NR-yz-Rb5"/>
+                            <constraint firstItem="ecm-HN-rSA" firstAttribute="height" secondItem="Ylz-Pt-cyp" secondAttribute="height" multiplier="0.07" id="DI9-Gc-VNq"/>
+                            <constraint firstItem="eYQ-cE-zIK" firstAttribute="centerX" secondItem="7lC-ep-n4G" secondAttribute="centerX" id="EpR-0L-LNr"/>
+                            <constraint firstItem="7lC-ep-n4G" firstAttribute="trailing" secondItem="chX-6B-qHa" secondAttribute="trailing" constant="20" id="NfL-XQ-lXP"/>
+                            <constraint firstItem="kyS-xY-z8X" firstAttribute="top" secondItem="chX-6B-qHa" secondAttribute="bottom" constant="20" id="OV6-cP-h9r"/>
+                            <constraint firstItem="SXl-O1-v5W" firstAttribute="top" secondItem="7lC-ep-n4G" secondAttribute="top" constant="20" id="TXo-Cb-gyf"/>
+                            <constraint firstItem="chX-6B-qHa" firstAttribute="top" secondItem="SXl-O1-v5W" secondAttribute="bottom" constant="20" id="d8k-7f-9PN"/>
+                            <constraint firstItem="SXl-O1-v5W" firstAttribute="width" secondItem="Ylz-Pt-cyp" secondAttribute="width" multiplier="0.45" id="hVa-aO-qFc"/>
+                            <constraint firstItem="7lC-ep-n4G" firstAttribute="trailing" secondItem="kyS-xY-z8X" secondAttribute="trailing" constant="20" id="kr3-42-FZO"/>
+                            <constraint firstItem="chX-6B-qHa" firstAttribute="leading" secondItem="7lC-ep-n4G" secondAttribute="leading" constant="20" id="rla-eu-Hm2"/>
+                            <constraint firstItem="eYQ-cE-zIK" firstAttribute="top" secondItem="SXl-O1-v5W" secondAttribute="top" id="sky-mR-VcJ"/>
+                            <constraint firstItem="kyS-xY-z8X" firstAttribute="leading" secondItem="7lC-ep-n4G" secondAttribute="leading" constant="20" id="vZl-ba-qEb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contactFirstName" destination="ecm-HN-rSA" id="Cqy-Cn-cjX"/>
+                        <outlet property="contactImageView" destination="SXl-O1-v5W" id="gE5-Au-5X0"/>
+                        <outlet property="contactLastName" destination="kF1-Dq-fzf" id="gLE-R3-RhR"/>
+                        <outlet property="contactNumber" destination="fDy-oo-k8X" id="PuP-Jg-oBy"/>
+                        <outlet property="hiddenButton" destination="eYQ-cE-zIK" id="5tG-gk-uD1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fwe-dW-3xo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847.826086956522" y="2.6785714285714284"/>
+        </scene>
+        <!--FiltersCollectionViewController-->
+        <scene sceneID="miG-EG-lA3">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="FiltersCollectionViewController" storyboardName="AddFilter" referencedIdentifier="FiltersCollectionViewController" id="9Fr-sC-2N0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwW-8z-0Fw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2399" y="-316"/>
+        </scene>
+        <!--ShowPrifilePhotoViewController-->
+        <scene sceneID="CV7-r7-6PA">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ShowPrifilePhotoViewController" storyboardName="ProfilePhoto" referencedIdentifier="ShowPrifilePhotoViewController" id="1YT-3N-WiZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eg0-SL-Xy3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2373" y="-198"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.fill.badge.plus" catalog="system" width="128" height="125"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

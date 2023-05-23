@@ -95,7 +95,6 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         let cellHeight = view.frame.size.height * 0.13
         return cellHeight
     }
@@ -125,7 +124,6 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // MARK: - delete contact
         let action = UIContextualAction(style: .destructive, title: "Delete") { (actoin, view, completionHandler) in
-            
             if let contactToRemove = self.contacts?[indexPath.row] {
                 self.context.delete(contactToRemove)
                 do {

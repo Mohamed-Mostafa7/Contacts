@@ -12,27 +12,26 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
     private lazy var gallery = UIAction(title: "Gallery", image: UIImage(systemName: "photo.stack")) { [weak self] (action) in
         self?.openGallery()
      }
-
     private lazy var camera = UIAction(title: "Camera", image: UIImage(systemName: "camera.fill")) { [weak self] (action) in
         self?.openCamera()
      }
-    
     private lazy var showImage = UIAction(title: "Show image", image: UIImage(systemName: "photo.fill")) { [weak self] (action) in
         self?.showProfileImage()
     }
-    
-    var menu = UIMenu()
-    let picker = UIImagePickerController()
      
     @IBOutlet var hiddenButton: UIButton!
-    var contactDelegat: AddContactProtocol?
-    
     @IBOutlet var contactImageView: UIImageView!
     @IBOutlet var contactFirstName: CustomTextField!
     @IBOutlet var contactLastName: CustomTextField!
     @IBOutlet var contactNumber: UITextField!
+    
     var imageData: Data?
     var contact: Contact?
+    
+    var menu = UIMenu()
+    let picker = UIImagePickerController()
+    
+    var contactDelegat: AddContactProtocol?
     var updatedContactClosure: ((Contact) -> Void)?
     
     override func viewDidLoad() {
@@ -43,15 +42,17 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
         if let data = contact?.image {
             contactImageView.image = UIImage(data: data)
         }
-        
+        addMenuToProfilePhoto()
         picker.delegate = self
-        // add menu to the prifile image to choose the gallery or the camera.
-        menu = UIMenu(title: "Pick an image", options: .displayInline, children: [gallery , camera, showImage])
-        hiddenButton.menu = menu
-        hiddenButton.showsMenuAsPrimaryAction = true
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveButtonTapped))
         
+    }
+    
+    func addMenuToProfilePhoto () {
+        menu = UIMenu(title: "Pick an image", options: .displayInline, children: [gallery , camera, showImage])
+        hiddenButton.menu = menu
+        hiddenButton.showsMenuAsPrimaryAction = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -69,8 +70,10 @@ class AddContactViewController: UIViewController, UIImagePickerControllerDelegat
             number: contactNumber.text ?? "",
             image: imageData
         )
-        guard let contact = contact else { return }
-        updatedContactClosure?(contact)
+        if let contact = contact {
+            updatedContactClosure?(contact)
+            navigationController?.popViewController(animated: true)
+        }
         navigationController?.popViewController(animated: true)
     }
     // MARK: - Using ImagePicker to get image from Gallery.

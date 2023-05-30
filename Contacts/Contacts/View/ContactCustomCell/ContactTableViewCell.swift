@@ -17,10 +17,12 @@ class ContactTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor =  UIColor(named: Colors.shared.jet)?.cgColor
         view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOpacity = 1
+        view.layer.shadowOpacity = 0.3
         view.layer.shadowOffset = CGSize(width: 0.1, height: 0.1)
-        view.layer.shadowRadius = 6
+        view.layer.shadowRadius = 3
         
     }
 

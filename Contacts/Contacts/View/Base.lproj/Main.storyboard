@@ -36,11 +36,23 @@
                                     <action selector="SearchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F1e-nE-a0q"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ggL-go-01S">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ota-DD-crE">
                                 <rect key="frame" x="0.0" y="156" width="414" height="740"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="sectionIndexBackgroundColor" name="whiteSmoke"/>
-                            </tableView>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ggL-go-01S">
+                                        <rect key="frame" x="0.0" y="10" width="414" height="730"/>
+                                        <color key="backgroundColor" name="whiteSmoke"/>
+                                        <color key="sectionIndexBackgroundColor" name="whiteSmoke"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" name="whiteSmoke"/>
+                                <constraints>
+                                    <constraint firstItem="ggL-go-01S" firstAttribute="top" secondItem="Ota-DD-crE" secondAttribute="top" constant="10" id="J5n-Ce-3cl"/>
+                                    <constraint firstAttribute="trailing" secondItem="ggL-go-01S" secondAttribute="trailing" id="M5O-z5-F4J"/>
+                                    <constraint firstItem="ggL-go-01S" firstAttribute="leading" secondItem="Ota-DD-crE" secondAttribute="leading" id="RKH-9n-fRP"/>
+                                    <constraint firstAttribute="bottom" secondItem="ggL-go-01S" secondAttribute="bottom" id="egA-rv-L5L"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing to Show !!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVI-M1-teC">
                                 <rect key="frame" x="62" y="404.5" width="290" height="145"/>
                                 <constraints>
@@ -56,18 +68,18 @@
                         <constraints>
                             <constraint firstItem="qpe-2a-nEb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="4cT-us-hur"/>
                             <constraint firstItem="WVI-M1-teC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="Cs4-U9-iHk"/>
+                            <constraint firstAttribute="bottom" secondItem="Ota-DD-crE" secondAttribute="bottom" id="Dn5-1H-gs8"/>
                             <constraint firstItem="qpe-2a-nEb" firstAttribute="leading" secondItem="yDU-1y-uMn" secondAttribute="trailing" constant="5" id="Gwv-Jc-uFs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ota-DD-crE" secondAttribute="trailing" id="OFG-gk-Mj9"/>
                             <constraint firstItem="yDU-1y-uMn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="PuS-5D-baN"/>
-                            <constraint firstItem="ggL-go-01S" firstAttribute="top" secondItem="yDU-1y-uMn" secondAttribute="bottom" constant="5" id="VBY-Vz-Y03"/>
+                            <constraint firstItem="Ota-DD-crE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W8Q-gM-YcE"/>
                             <constraint firstItem="yDU-1y-uMn" firstAttribute="height" secondItem="qpe-2a-nEb" secondAttribute="height" id="abT-7j-Kci"/>
                             <constraint firstItem="yDU-1y-uMn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="git-f9-xNc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ggL-go-01S" secondAttribute="trailing" id="hQA-w8-B0g"/>
-                            <constraint firstAttribute="bottom" secondItem="ggL-go-01S" secondAttribute="bottom" id="qUl-mz-PjA"/>
                             <constraint firstItem="qpe-2a-nEb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="sZq-O0-vFy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qpe-2a-nEb" secondAttribute="trailing" constant="10" id="u96-kB-MTE"/>
-                            <constraint firstItem="ggL-go-01S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z1F-Vb-Ldd"/>
                             <constraint firstItem="WVI-M1-teC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="zIT-TU-Jkz"/>
                             <constraint firstItem="WVI-M1-teC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zjP-7W-b0H"/>
+                            <constraint firstItem="Ota-DD-crE" firstAttribute="top" secondItem="yDU-1y-uMn" secondAttribute="bottom" constant="5" id="zkr-L8-psY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contacts" id="UD9-of-vKc"/>
@@ -118,13 +130,13 @@
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <namedColor name="jet">
-            <color red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="lightSeaGreen">
-            <color red="0.13030961160000001" green="0.7275756001" blue="0.68034785990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12999999523162842" green="0.7279999852180481" blue="0.68000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="whiteSmoke">
-            <color red="0.88235294119999996" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.88200002908706665" green="0.90200001001358032" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

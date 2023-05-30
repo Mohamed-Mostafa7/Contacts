@@ -34,7 +34,7 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="WtZ-8H-u2p">
                                 <rect key="frame" x="10" y="8.6666666666666643" width="68.666666666666671" height="68.666666666666686"/>
-                                <color key="tintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="0.92844456549999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="0.92844456549999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WtZ-8H-u2p" secondAttribute="height" multiplier="1:1" id="i3c-TA-Nxz"/>
                                 </constraints>

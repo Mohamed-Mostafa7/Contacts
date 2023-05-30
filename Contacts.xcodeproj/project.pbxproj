@@ -10,6 +10,8 @@
 		E908A98B29C08747008CD944 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E908A98A29C08747008CD944 /* AddContactViewController.swift */; };
 		E908A98E29C0BC9A008CD944 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E908A98C29C0BC9A008CD944 /* Contact+CoreDataClass.swift */; };
 		E908A98F29C0BC9A008CD944 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E908A98D29C0BC9A008CD944 /* Contact+CoreDataProperties.swift */; };
+		E951BC562A256E0300250EF7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951BC552A256E0300250EF7 /* BaseViewController.swift */; };
+		E951BC592A262E4C00250EF7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951BC582A262E4C00250EF7 /* Colors.swift */; };
 		E98FA0E229C4BF56006754AC /* FiltersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98FA0E129C4BF56006754AC /* FiltersCollectionViewController.swift */; };
 		E98FA0E429C4C981006754AC /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98FA0E329C4C981006754AC /* ImageCollectionViewCell.swift */; };
 		E9BB95CE2A18479500A71683 /* AddContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9BB95CD2A18479500A71683 /* AddContact.storyboard */; };
@@ -32,6 +34,8 @@
 		E908A98A29C08747008CD944 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		E908A98C29C0BC9A008CD944 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E908A98D29C0BC9A008CD944 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E951BC552A256E0300250EF7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E951BC582A262E4C00250EF7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E98FA0E129C4BF56006754AC /* FiltersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewController.swift; sourceTree = "<group>"; };
 		E98FA0E329C4C981006754AC /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E9BB95CD2A18479500A71683 /* AddContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddContact.storyboard; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E951BC572A262E3200250EF7 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				E951BC552A256E0300250EF7 /* BaseViewController.swift */,
+				E951BC582A262E4C00250EF7 /* Colors.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		E9BB95C82A18446F00A71683 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				E98FA0E129C4BF56006754AC /* FiltersCollectionViewController.swift */,
+				E98FA0E329C4C981006754AC /* ImageCollectionViewCell.swift */,
 				E9BB95CF2A18488A00A71683 /* AddFilter.storyboard */,
 			);
 			path = AddFilterToProfilePhoto;
@@ -131,6 +145,7 @@
 				E9BB95CA2A1844BC00A71683 /* ViewAndUpdate */,
 				E9BB95CB2A18451F00A71683 /* AddFilterToProfilePhoto */,
 				E9BB95CC2A18453800A71683 /* ShowProfilePhoto */,
+				E951BC572A262E3200250EF7 /* General */,
 				E9DBAE7829AD68CD008B65E0 /* HelpingFiles */,
 				E9DBAE6B29AD67DB008B65E0 /* Info.plist */,
 				E9DBAE6329AD67DA008B65E0 /* Contacts.xcdatamodeld */,
@@ -151,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				E9DBAE6029AD67DA008B65E0 /* Main.storyboard */,
-				E98FA0E329C4C981006754AC /* ImageCollectionViewCell.swift */,
 				E9DBAE7929AD6EC3008B65E0 /* CustomTextField.swift */,
 				E9DBAE7F29AD7740008B65E0 /* ContactCustomCell */,
 			);
@@ -253,8 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E951BC562A256E0300250EF7 /* BaseViewController.swift in Sources */,
 				E9DBAE7A29AD6EC3008B65E0 /* CustomTextField.swift in Sources */,
 				E98FA0E429C4C981006754AC /* ImageCollectionViewCell.swift in Sources */,
+				E951BC592A262E4C00250EF7 /* Colors.swift in Sources */,
 				E9DBAE6529AD67DA008B65E0 /* Contacts.xcdatamodeld in Sources */,
 				E908A98B29C08747008CD944 /* AddContactViewController.swift in Sources */,
 				E9E7748E29CB5C5500E2F295 /* ShowProfilePhotoViewController.swift in Sources */,

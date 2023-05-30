@@ -14,7 +14,17 @@ class FiltersCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        changeStatusBarColors()
+    }
+    
+    func changeStatusBarColors() {
+        let width = view.frame.size.width
+        let height = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 50
+        let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        statusBarView.backgroundColor = #colorLiteral(red: 0.1303096116, green: 0.7275756001, blue: 0.6803478599, alpha: 1)
+        view.addSubview(statusBarView)
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

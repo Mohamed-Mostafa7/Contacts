@@ -12,7 +12,7 @@ class CustomTextField: UITextField {
     
     override func awakeFromNib() {
         layer.borderWidth = 1
-        layer.borderColor =  UIColor.lightGray.cgColor
+        layer.borderColor =  UIColor(named: Colors.shared.jet)?.cgColor
         clipsToBounds = true
         layer.cornerRadius = frame.size.height/4
     }

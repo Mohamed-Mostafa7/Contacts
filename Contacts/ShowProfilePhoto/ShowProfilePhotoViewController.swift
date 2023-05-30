@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ShowProfilePhotoViewController: UIViewController {
+class ShowProfilePhotoViewController: BaseViewController {
     
     var profileImage: UIImage?
     @IBOutlet var imageView: UIImageView!

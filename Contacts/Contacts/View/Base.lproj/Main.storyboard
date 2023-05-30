@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,26 +18,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for contact" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yDU-1y-uMn" customClass="CustomTextField" customModule="Contacts" customModuleProvider="target">
-                                <rect key="frame" x="10" y="92" width="335" height="54"/>
+                                <rect key="frame" x="10" y="97" width="335" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpe-2a-nEb">
-                                <rect key="frame" x="350" y="92" width="54" height="54"/>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpe-2a-nEb">
+                                <rect key="frame" x="350" y="97" width="54" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qpe-2a-nEb" secondAttribute="height" multiplier="1:1" id="myM-9h-6hh"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" image="magnifyingglass" catalog="system">
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="jet"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="SearchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F1e-nE-a0q"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ggL-go-01S">
-                                <rect key="frame" x="0.0" y="146" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="156" width="414" height="740"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" name="whiteSmoke"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing to Show !!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVI-M1-teC">
                                 <rect key="frame" x="62" y="404.5" width="290" height="145"/>
@@ -44,22 +47,22 @@
                                     <constraint firstAttribute="width" secondItem="WVI-M1-teC" secondAttribute="height" multiplier="2:1" id="KH4-kF-HeC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-HeavyItalic" family="Avenir Next" pointSize="35"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="jet"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qpe-2a-nEb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4cT-us-hur"/>
+                            <constraint firstItem="qpe-2a-nEb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="4cT-us-hur"/>
                             <constraint firstItem="WVI-M1-teC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="Cs4-U9-iHk"/>
                             <constraint firstItem="qpe-2a-nEb" firstAttribute="leading" secondItem="yDU-1y-uMn" secondAttribute="trailing" constant="5" id="Gwv-Jc-uFs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ggL-go-01S" secondAttribute="bottom" id="OS7-m6-md2"/>
                             <constraint firstItem="yDU-1y-uMn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="PuS-5D-baN"/>
-                            <constraint firstItem="ggL-go-01S" firstAttribute="top" secondItem="yDU-1y-uMn" secondAttribute="bottom" id="VBY-Vz-Y03"/>
+                            <constraint firstItem="ggL-go-01S" firstAttribute="top" secondItem="yDU-1y-uMn" secondAttribute="bottom" constant="5" id="VBY-Vz-Y03"/>
                             <constraint firstItem="yDU-1y-uMn" firstAttribute="height" secondItem="qpe-2a-nEb" secondAttribute="height" id="abT-7j-Kci"/>
-                            <constraint firstItem="yDU-1y-uMn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="git-f9-xNc"/>
+                            <constraint firstItem="yDU-1y-uMn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="git-f9-xNc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ggL-go-01S" secondAttribute="trailing" id="hQA-w8-B0g"/>
+                            <constraint firstAttribute="bottom" secondItem="ggL-go-01S" secondAttribute="bottom" id="qUl-mz-PjA"/>
                             <constraint firstItem="qpe-2a-nEb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="sZq-O0-vFy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qpe-2a-nEb" secondAttribute="trailing" constant="10" id="u96-kB-MTE"/>
                             <constraint firstItem="ggL-go-01S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z1F-Vb-Ldd"/>
@@ -76,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="962.59541984732823" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="962.31884057971024" y="3.3482142857142856"/>
         </scene>
         <!--addContact-->
         <scene sceneID="isA-fT-4mM">
@@ -94,6 +97,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uc0-Gz-8uT">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="lightSeaGreen"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="whiteSmoke"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="whiteSmoke"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -107,9 +117,15 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="jet">
+            <color red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightSeaGreen">
+            <color red="0.13030961160000001" green="0.7275756001" blue="0.68034785990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteSmoke">
+            <color red="0.88235294119999996" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

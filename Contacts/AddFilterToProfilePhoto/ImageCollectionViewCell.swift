@@ -19,7 +19,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     func configure(){
         layer.borderWidth = 1
-        layer.borderColor =  UIColor.lightGray.cgColor
+        layer.borderColor =  UIColor(named: Colors.shared.jet)?.cgColor
         clipsToBounds = true
         layer.cornerRadius = 20
     }

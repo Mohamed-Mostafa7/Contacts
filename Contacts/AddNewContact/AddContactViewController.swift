@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddContactViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class AddContactViewController: BaseViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     private lazy var gallery = UIAction(title: "Gallery", image: UIImage(systemName: "photo.stack")) { [weak self] (action) in
         self?.openGallery()
@@ -146,7 +146,7 @@ extension AddContactViewController {
     func customImageView (_ imageView: UIImageView) {
         imageView.layer.cornerRadius = imageView.frame.size.width/2
         imageView.layer.borderWidth = 5
-        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        imageView.layer.borderColor = UIColor(named: Colors.shared.jet)?.cgColor
         imageView.clipsToBounds = true
     }
 }

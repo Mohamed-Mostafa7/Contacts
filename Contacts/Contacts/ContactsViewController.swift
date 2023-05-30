@@ -11,7 +11,7 @@ protocol AddContactProtocol {
     func contactInfo(firstName: String, lastName: String, number: String,image: Data?)
 }
 
-class ContactsViewController: UIViewController {
+class ContactsViewController: BaseViewController {
     
     @IBOutlet var emptySearchLabel: UILabel!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -22,12 +22,15 @@ class ContactsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+        view.backgroundColor = UIColor(named: Colors.shared.lightSeaGreen)
+        navigationController?.navigationBar.tintColor = UIColor(named: Colors.shared.whiteSmoke)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: .add, style: .plain, target: self, action: #selector(addContact))
         contactsTableView.register(ContactTableViewCell.nib(), forCellReuseIdentifier: ContactTableViewCell.identifier)
         contactsTableView.delegate = self
         contactsTableView.dataSource = self
+        
         
         fetchContacts()
     }
@@ -95,7 +98,7 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cellHeight = view.frame.size.height * 0.13
+        let cellHeight = view.frame.size.height * 0.11
         return cellHeight
     }
     

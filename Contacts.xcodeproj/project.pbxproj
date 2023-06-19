@@ -10,6 +10,8 @@
 		E908A98B29C08747008CD944 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E908A98A29C08747008CD944 /* AddContactViewController.swift */; };
 		E908A98E29C0BC9A008CD944 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E908A98C29C0BC9A008CD944 /* Contact+CoreDataClass.swift */; };
 		E908A98F29C0BC9A008CD944 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E908A98D29C0BC9A008CD944 /* Contact+CoreDataProperties.swift */; };
+		E945B9932A40BDC4006AF6F6 /* QrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E945B9912A40BDC4006AF6F6 /* QrCodeViewController.swift */; };
+		E945B9942A40BDC4006AF6F6 /* QrCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E945B9922A40BDC4006AF6F6 /* QrCodeViewController.xib */; };
 		E951BC562A256E0300250EF7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951BC552A256E0300250EF7 /* BaseViewController.swift */; };
 		E951BC592A262E4C00250EF7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E951BC582A262E4C00250EF7 /* Colors.swift */; };
 		E98FA0E229C4BF56006754AC /* FiltersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98FA0E129C4BF56006754AC /* FiltersCollectionViewController.swift */; };
@@ -34,6 +36,8 @@
 		E908A98A29C08747008CD944 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		E908A98C29C0BC9A008CD944 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E908A98D29C0BC9A008CD944 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E945B9912A40BDC4006AF6F6 /* QrCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeViewController.swift; sourceTree = "<group>"; };
+		E945B9922A40BDC4006AF6F6 /* QrCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QrCodeViewController.xib; sourceTree = "<group>"; };
 		E951BC552A256E0300250EF7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E951BC582A262E4C00250EF7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E98FA0E129C4BF56006754AC /* FiltersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E945B98C2A40BD0A006AF6F6 /* QrCode */ = {
+			isa = PBXGroup;
+			children = (
+				E945B9912A40BDC4006AF6F6 /* QrCodeViewController.swift */,
+				E945B9922A40BDC4006AF6F6 /* QrCodeViewController.xib */,
+			);
+			path = QrCode;
+			sourceTree = "<group>";
+		};
 		E951BC572A262E3200250EF7 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +158,7 @@
 				E9BB95CA2A1844BC00A71683 /* ViewAndUpdate */,
 				E9BB95CB2A18451F00A71683 /* AddFilterToProfilePhoto */,
 				E9BB95CC2A18453800A71683 /* ShowProfilePhoto */,
+				E945B98C2A40BD0A006AF6F6 /* QrCode */,
 				E951BC572A262E3200250EF7 /* General */,
 				E9DBAE7829AD68CD008B65E0 /* HelpingFiles */,
 				E9DBAE6B29AD67DB008B65E0 /* Info.plist */,
@@ -256,6 +270,7 @@
 				E9DBAE6729AD67DB008B65E0 /* Assets.xcassets in Resources */,
 				E9BB95CE2A18479500A71683 /* AddContact.storyboard in Resources */,
 				E9BB95D02A18488A00A71683 /* AddFilter.storyboard in Resources */,
+				E945B9942A40BDC4006AF6F6 /* QrCodeViewController.xib in Resources */,
 				E9DBAE6229AD67DA008B65E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +289,7 @@
 				E9DBAE6529AD67DA008B65E0 /* Contacts.xcdatamodeld in Sources */,
 				E908A98B29C08747008CD944 /* AddContactViewController.swift in Sources */,
 				E9E7748E29CB5C5500E2F295 /* ShowProfilePhotoViewController.swift in Sources */,
+				E945B9932A40BDC4006AF6F6 /* QrCodeViewController.swift in Sources */,
 				E908A98F29C0BC9A008CD944 /* Contact+CoreDataProperties.swift in Sources */,
 				E98FA0E229C4BF56006754AC /* FiltersCollectionViewController.swift in Sources */,
 				E9DBAE5F29AD67DA008B65E0 /* ContactsViewController.swift in Sources */,
@@ -432,8 +448,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,8 +475,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

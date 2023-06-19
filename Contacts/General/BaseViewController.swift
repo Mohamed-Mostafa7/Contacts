@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
     }
     
     func changeStatusBarColors() {
-        let width = view.frame.size.width
+        let width = view.frame.size.width + 50
         let height = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 50
         let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: height))
         statusBarView.backgroundColor = UIColor(named: Colors.shared.lightSeaGreen)

@@ -49,6 +49,16 @@ class AddContactViewController: BaseViewController, UIImagePickerControllerDeleg
         
     }
     
+    
+    @IBAction func generateQrCodeButton(_ sender: UIButton) {
+        let vc = QrCodeViewController()
+        vc.firstName = contactFirstName.text
+        vc.lastName = contactLastName.text
+        vc.number = contactNumber.text
+        vc.image = contactImageView.image
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func addMenuToProfilePhoto () {
         menu = UIMenu(title: "Pick an image", options: .displayInline, children: [gallery , camera, showImage])
         hiddenButton.menu = menu

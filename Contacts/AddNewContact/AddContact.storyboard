@@ -67,6 +67,21 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y60-wf-diB">
+                                <rect key="frame" x="172" y="742" width="70" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="15k-Ls-h69"/>
+                                    <constraint firstAttribute="width" constant="70" id="TAz-re-d0d"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system" title="">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="generateQrCodeButton:" destination="ckz-Ff-bhe" eventType="touchUpInside" id="l7b-oX-f0F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7lC-ep-n4G"/>
                         <color key="backgroundColor" name="whiteSmoke"/>
@@ -77,10 +92,12 @@
                             <constraint firstItem="eYQ-cE-zIK" firstAttribute="centerX" secondItem="7lC-ep-n4G" secondAttribute="centerX" id="EpR-0L-LNr"/>
                             <constraint firstItem="7lC-ep-n4G" firstAttribute="trailing" secondItem="chX-6B-qHa" secondAttribute="trailing" constant="20" id="NfL-XQ-lXP"/>
                             <constraint firstItem="kyS-xY-z8X" firstAttribute="top" secondItem="chX-6B-qHa" secondAttribute="bottom" constant="20" id="OV6-cP-h9r"/>
+                            <constraint firstItem="7lC-ep-n4G" firstAttribute="bottom" secondItem="y60-wf-diB" secondAttribute="bottom" constant="50" id="SvK-vQ-qsE"/>
                             <constraint firstItem="SXl-O1-v5W" firstAttribute="top" secondItem="7lC-ep-n4G" secondAttribute="top" constant="20" id="TXo-Cb-gyf"/>
                             <constraint firstItem="chX-6B-qHa" firstAttribute="top" secondItem="SXl-O1-v5W" secondAttribute="bottom" constant="20" id="d8k-7f-9PN"/>
                             <constraint firstItem="SXl-O1-v5W" firstAttribute="width" secondItem="Ylz-Pt-cyp" secondAttribute="width" multiplier="0.45" id="hVa-aO-qFc"/>
                             <constraint firstItem="7lC-ep-n4G" firstAttribute="trailing" secondItem="kyS-xY-z8X" secondAttribute="trailing" constant="20" id="kr3-42-FZO"/>
+                            <constraint firstItem="y60-wf-diB" firstAttribute="centerX" secondItem="7lC-ep-n4G" secondAttribute="centerX" id="rLI-Zj-Ry4"/>
                             <constraint firstItem="chX-6B-qHa" firstAttribute="leading" secondItem="7lC-ep-n4G" secondAttribute="leading" constant="20" id="rla-eu-Hm2"/>
                             <constraint firstItem="eYQ-cE-zIK" firstAttribute="top" secondItem="SXl-O1-v5W" secondAttribute="top" id="sky-mR-VcJ"/>
                             <constraint firstItem="kyS-xY-z8X" firstAttribute="leading" secondItem="7lC-ep-n4G" secondAttribute="leading" constant="20" id="vZl-ba-qEb"/>
@@ -117,8 +134,9 @@
     </scenes>
     <resources>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="125"/>
+        <image name="qrcode" catalog="system" width="128" height="114"/>
         <namedColor name="jet">
-            <color red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.47600001096725464" green="0.47600001096725464" blue="0.47600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="whiteSmoke">
             <color red="0.88200002908706665" green="0.90200001001358032" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

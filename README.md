@@ -4,7 +4,7 @@
   <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/contacts-512.png" alt="Products Viewr logo" width="30%">
 </p>
 
-  Contacts is an app that allow the user to create contact that contains name, number, and image then store, edit, and add it to mobile locally using Cord Data.
+  Contacts is an app that allow the user to create contact that contains name, number, and image then store, edit, and delete it from mobile locally using Cord Data.
   It allow users also to share their contact with anyone using QR Code.
 
 ## Installation
@@ -33,13 +33,19 @@ cd Contacts
   
 ## Screenshots
 <p align="Center">
-  <img src="" width="25%">
-  <img src="" width="25%"> 
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/253336572-f3cd2153-bea3-49d8-aba1-64320f2a5b24.png" width="25%">
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/253336609-80c4b402-bcff-4ff6-98d3-1b7b5c58881a.png" width="25%"> 
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/253336635-1372f98b-0248-4327-af81-a95d7e0718c2.png" width="25%"> 
+</p>
+
+<p align="Center">
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/253337862-0f82be4d-4149-4714-af0b-8f0666e7ad94.png" width="25%">
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/55007694/253336649-7bdef654-81e1-48d0-88ae-033e4d783720.png" width="25%"> 
 </p>
 
 ## Technologies Used
 
-The following technologies were used in the development of Product Viewer:
+The following technologies were used in the development of Contacts:
 - MVC Architecture pattern
 - Delegate design pattern
 - Core Data
